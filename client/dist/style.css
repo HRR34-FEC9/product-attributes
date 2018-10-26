@@ -1,0 +1,24 @@
+#centerCol {
+  display: flex;
+  flex-flow: column wrap;
+  width: 379px;
+  height: 863px;
+  font-family: Arial,sans-serif;
+}
+
+.titleSection {
+  width: 375px;
+  height: 54px;
+}
+
+.titleText {
+  text-rendering: optimizeLegibility;
+  font-size: 21px!important;
+}
+
+h1 {
+  font-weight: 400;
+  line-height: .9!important;
+  padding: 0;
+  margin: 0;
+}
