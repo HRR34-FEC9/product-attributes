@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+import models from '../database/index';
 
 const app = express();
 
@@ -17,6 +18,9 @@ app.get('api/product/info', (req, res) => {
   })
 });
 
-app.listen(3500, () => {
+sequelize.sync().then(() => {
+  app.listen(3500, () => {
   console.log( "listening on port 3500");
+  });
 });
+
