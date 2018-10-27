@@ -1,4 +1,4 @@
-export default (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Description = sequelize.define("description", {
     descriptionId: {
       type: DataTypes.UUID,
@@ -10,11 +10,6 @@ export default (sequelize, DataTypes) => {
     packaging: DataTypes.STRING,
   });
 
-  Description.associate = (models) => {
-    Description.belongsTo(models.Product, {
-      foreignKey: 'productId',
-    });
-  };
 
   return Description
-}
+};

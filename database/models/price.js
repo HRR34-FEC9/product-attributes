@@ -1,4 +1,4 @@
-export default (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Price = sequelize.define("price", {
     priceId: {
       type: DataTypes.UUID,
@@ -9,12 +9,6 @@ export default (sequelize, DataTypes) => {
     RetailPrice: DataTypes.DECIMAL,
     Savings: DataTypes.STRING,
   });
-
-  Price.associate = (models) => {
-    Price.belongsTo(models.Product, {
-      foreignKey: 'productId',
-    });
-  };
 
   return Price;
 }

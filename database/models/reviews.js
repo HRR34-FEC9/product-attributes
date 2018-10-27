@@ -1,4 +1,4 @@
-export default (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Reviews = sequelize.define("reviews", {
     reviewId: {
       type: DataTypes.UUID,
@@ -10,10 +10,7 @@ export default (sequelize, DataTypes) => {
   });
 
   Reviews.associate = (models) => {
-    Reviews.belongsTo(models.Product, {
-      foreignKey: 'productId',
-    });
-    Reviews.belongsTo(models.Users, {
+    Reviews.belongsTo(models.User, {
       foreignKey: 'userId',
     });
   };

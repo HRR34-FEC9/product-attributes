@@ -1,16 +1,18 @@
-import Sequelize from 'sequelize';
+const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('pattribs', 'hrr34-fec9', 'hrr34-fec9', {
+
+const sequelize = new Sequelize('pattribs', 'fec9', 'fec9', {
   dialect: 'postgres'
 });
 
 const models = {
-  Product: sequelize.import('./models/product');
-  Retailer: sequelize.import('./models/retailer');
-  ProductSize: sequelize.import('./models/size');
-  Price: sequelize.import('./models/price');
-  Description: sequelize.import('./models/description');
-  Reviews: sequelize.import('./models/reviews');
+  Product: require('./models/product')(sequelize, Sequelize),
+  Retailer: require('./models/retailer')(sequelize, Sequelize),
+  ProductSize: require('./models/size')(sequelize, Sequelize),
+  Price: require('./models/price')(sequelize, Sequelize),
+  Description: require('./models/description')(sequelize, Sequelize),
+  Reviews: require('./models/reviews')(sequelize, Sequelize),
+  User: require('./models/user')(sequelize, Sequelize)
 };
 
 //if there is an association in the model then create the association
@@ -21,9 +23,6 @@ Object.keys(models).forEach((modelName) => {
   }
 });
 
-models.sequelize = sequelize;
-models.Sequelize = Sequelize;
-
 sequelize
   .authenticate()
   .then(function(err) {
@@ -33,4 +32,7 @@ sequelize
     console.log('Unable to connect to the database:', err);
   });
 
-export default models;
+models.sequelize = sequelize;
+models.Sequelize = Sequelize;
+
+module.exports = models;

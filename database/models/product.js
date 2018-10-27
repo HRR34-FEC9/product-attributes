@@ -1,4 +1,4 @@
-export default (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Product = sequelize.define("product", {
     productId: {
       type: DataTypes.UUID,
@@ -14,9 +14,6 @@ export default (sequelize, DataTypes) => {
     });
     Product.belongsTo(models.ProductSize, {
       foreignKey: 'sizeId',
-    });
-    Product.belongsTo(models.Price, {
-      foreignKey: 'priceId',
     });
     Product.belongsTo(models.Description, {
       foreignKey: 'descriptionId',

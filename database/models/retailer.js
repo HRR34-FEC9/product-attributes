@@ -1,4 +1,4 @@
-export default (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Retailer = sequelize.define("retailer", {
     companyId: {
       type: DataTypes.UUID,
