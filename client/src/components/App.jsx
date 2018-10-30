@@ -16,9 +16,10 @@ class App extends React.Component {
 
   getData() {
     $.get('/api/product/info', (data) => {
-    })
-    .done((data) => {
       this.setState()
+    })
+    .done(() => {
+      console.log('successfully connected to server')
     })
     .fail(() => {
       console.log('error connecting to server')

@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const ProductAttribs = (props) => (
   <div id="centerCol">
     <div className="titleSection">
@@ -9,6 +10,17 @@ const ProductAttribs = (props) => (
         </span>
       </h1>
     </div>
+    <div className="companyName">
+      <span>by Samasung</span>
+    </div>
+    <div className="customerReviews">
+      "place holder for review stars & ther related info"
+    </div>
+    <div className="questions">
+      <span className="askPipe"> | </span>
+      <span className="askLink"> 155 answered questions </span>
+    </div>
+    <span className="hr"/>
   </div>
 )
 

@@ -6,7 +6,9 @@ const models = require('../database/index');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../client/dist')));
+
 
 app.get('api/product/info', (req, res) => {
   xxxxx.get((err, data) => {
@@ -18,9 +20,11 @@ app.get('api/product/info', (req, res) => {
   })
 });
 
-models.sequelize.sync({}).then(() => {
-  app.listen(3500, () => {
-  console.log( "listening on port 3500");
-  });
-});
+// // models.sequelize.sync({}).then(() => {
+//   app.listen(3500, () => {
+//   console.log( "listening on port 3500");
+//   });
+// // });
+
+module.exports = app;
 
