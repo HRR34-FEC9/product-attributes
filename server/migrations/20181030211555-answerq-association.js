@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, DataTypes) => {
     return queryInterface.addColumn(
       "AnswerQs",
-      "UserId",
+      "userId",
       {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
@@ -19,7 +19,7 @@ module.exports = {
     .then(() => {
       return queryInterface.addColumn(
         "AnswerQs",
-        "ProductId",
+        "productId",
         {
           type: DataTypes.UUID,
           defaultValue: DataTypes.UUIDV4,
@@ -37,12 +37,12 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     return queryInterface.removeColumn(
       "AnswerQs",
-      "UserId"
+      "userId"
     )
     .then(() => {
       return queryInterface.removeColumn(
         "AnswerQs",
-        "ProductId"
+        "productId"
       )
     })
   }

@@ -7,15 +7,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     listPrice: DataTypes.DECIMAL,
     retailPrice: DataTypes.DECIMAL,
-    savings: DataTypes.STRING,
-  },
-  {}
-  );
+    savings: DataTypes.DECIMAL,
+  });
 
   Price.associate = (models) => {
     Price.belongsTo(models.ProductSize, {
       foreignKey: 'sizeId',
-      onDelete: 'CASCADE',
     })
   };
 

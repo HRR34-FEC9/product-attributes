@@ -6,21 +6,20 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     productName: DataTypes.STRING,
-  },
-  {});
+  });
 
   Product.associate = (models) => {
     Product.belongsTo(models.Retailer, {
       foreignKey: 'companyId',
     });
     Product.hasMany(models.Review, {
-      foreignKey: 'reviewsId',
+      foreignKey: 'productId',
     });
     Product.hasMany(models.AnswerQ, {
-      foreignKey: 'answerId',
+      foreignKey: 'productId',
     });
     Product.hasMany(models.ProductSize, {
-      foreignKey: 'sizeId',
+      foreignKey: 'productId',
     });
   };
 

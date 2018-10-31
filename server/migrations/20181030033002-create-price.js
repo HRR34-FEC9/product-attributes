@@ -14,7 +14,7 @@ module.exports = {
         type: DataTypes.DECIMAL
       },
       savings: {
-        type: DataTypes.INTEGER
+        type: DataTypes.DECIMAL
       },
       createdAt: {
         allowNull: false,

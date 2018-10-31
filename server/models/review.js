@@ -7,8 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     review: DataTypes.TEXT,
     rating: DataTypes.INTEGER,
-  },
-  {});
+  });
 
   Review.associate = (models) => {
     Review.belongsTo(models.User, {

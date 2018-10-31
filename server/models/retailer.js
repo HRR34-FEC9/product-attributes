@@ -1,4 +1,3 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Retailer = sequelize.define('Retailer', {
     companyId: {
@@ -8,8 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     companyName: DataTypes.STRING,
     companyUrl: DataTypes.STRING
-  },
-  {});
+  });
 
   Retailer.associate = (models) => {
     Retailer.hasMany(models.Product, {

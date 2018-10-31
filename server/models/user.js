@@ -9,8 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       unique: true
     }
-  },
-  {});
+  });
 
   User.associate = (models) => {
     User.hasMany(models.Review, {

@@ -13,11 +13,9 @@ module.exports = (sequelize, DataTypes) => {
   AnswerQ.associate = (models) => {
     AnswerQ.belongsTo(models.User, {
       foreignKey: 'userId',
-      onDelete: 'CASCADE',
     });
     AnswerQ.belongsTo(models.Product, {
       foreignKey: 'productId',
-      onDelete: 'CASCADE',
     });
   }
 

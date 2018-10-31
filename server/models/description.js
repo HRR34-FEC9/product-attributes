@@ -1,20 +1,18 @@
 module.exports = (sequelize, DataTypes) => {
   const Description = sequelize.define('Description', {
-    descriptionId: {
+    description_id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true
     },
-    productDetails: DataTypes.TEXT,
-    whatsIncluded: DataTypes.TEXT,
+    product_detail: DataTypes.TEXT,
+    whats_included: DataTypes.TEXT,
     packaging: DataTypes.STRING,
-  },
-  {});
+  });
 
   Description.associate = (models) => {
     Description.belongsTo(models.Product, {
       foreignKey: 'productId',
-      onDelete: 'CASCADE',
     });
   };
 
