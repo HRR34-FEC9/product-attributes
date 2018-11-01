@@ -5,7 +5,7 @@ module.exports = {
     return Product
       .create({
         productName: req.body.productName,
-        companyId: req.params.companyId,
+        companyId: req.body.companyId,
       })
       .then(product => res.status(201).send(product))
       .catch(err => res.status(400).send(err));

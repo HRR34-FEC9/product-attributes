@@ -7,7 +7,7 @@ module.exports = {
         product_detail: req.body.product_detail,
         whats_included: req.body.whats_included,
         packaging: req.body.packaging,
-        productId: req.params.productId,
+        productId: req.body.productId,
       })
       .then(description => res.status(201).send(description))
       .catch(err => res.status(400).send(err));

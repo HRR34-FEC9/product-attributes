@@ -5,7 +5,7 @@ module.exports = {
     return ProductSize
       .create({
         sizeDescription: req.body.sizeDescription,
-        productId: req.params.productId,
+        productId: req.body.productId,
       })
       .then(productSize => res.status(201).send(productSize))
       .catch(err => res.status(400).send(err));

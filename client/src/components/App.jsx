@@ -15,7 +15,8 @@ class App extends React.Component {
   }
 
   getData() {
-    $.get('/api/product/info', (data) => {
+    $.get('/api', (data) => {
+      // console.log('19',data)
       this.setState()
     })
     .done(() => {

@@ -6,8 +6,8 @@ module.exports = {
       .create({
         review: req.body.review,
         rating: req.body.rating,
-        productId: req.params.productId,
-        userId: req.params.userId,
+        productId: req.body.productId,
+        userId: req.body.userId,
       })
       .then(review => res.status(201).send(review))
       .catch(err => res.status(400).send(err));

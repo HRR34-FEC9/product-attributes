@@ -6,7 +6,7 @@ module.exports = {
       .create({
         answer: req.body.answer,
         userId: req.body.userId,
-        productId: req.params.productId,
+        productId: req.body.productId,
       })
       .then(answer => res.status(201).send(answer))
       .catch(err => res.status(400).send(err));
