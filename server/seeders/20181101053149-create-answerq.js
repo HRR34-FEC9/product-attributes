@@ -5,7 +5,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     const createAnswer = () => {
       const answerId= uuidv4();
-      const answer = faker.internet.userName;
+      let answer = faker.lorem.paragraphs(1, "\n \r");
       const createdAt = faker.date.past();
       const updatedAt = faker.date.recent();
     return answer = {answerId, answer, createdAt, updatedAt};
@@ -17,7 +17,7 @@ module.exports = {
         answers.push(createAnswer());
       };
       return answers;
-      };
+    };
 
     return queryInterface.bulkInsert("AnswerQs", addAnswers());
   },

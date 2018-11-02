@@ -20,7 +20,7 @@ module.exports = {
       return descriptions;
     };
 
-    return queryInterface.bulkInsert('Descriptions', addProductSize());
+    return queryInterface.bulkInsert('Descriptions', addDescription());
   },
 
   down: (queryInterface, Sequelize) => {

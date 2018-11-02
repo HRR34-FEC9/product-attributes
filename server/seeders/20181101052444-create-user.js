@@ -5,7 +5,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     const createUsers = () => {
       const userId= uuidv4();
-      const username = faker.internet.userName;
+      const username = faker.internet.userName();
       const createdAt = faker.date.past();
       const updatedAt = faker.date.recent();
     return user = {userId, username, createdAt, updatedAt};
@@ -17,7 +17,7 @@ module.exports = {
         users.push(createUsers());
       };
       return users;
-      };
+    };
 
     return queryInterface.bulkInsert('Users', addUsers());
   },
