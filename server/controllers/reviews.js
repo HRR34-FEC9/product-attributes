@@ -18,4 +18,17 @@ module.exports = {
       .then(review => res.status(201).send(review))
       .catch(err => res.status(400).send(err));
   },
+  retrieve(req, res) {
+    return Review
+    .findByPk(req.params.reviewId)
+    .then(review => {
+      if (!review) {
+        return res.status(404).send({
+          message: 'Review Not Found'
+        })
+      }
+      return res.status(200).send(review);
+    })
+    .catch(error => res.status(400).send(error));
+  }
 };

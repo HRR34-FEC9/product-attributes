@@ -8,7 +8,7 @@ class App extends React.Component {
 
     //think through and set up state
     this.state = {
-
+      isLoaded: false;
     };
     // bind functions to "this"
     this.getData = this.getData.bind(this);
@@ -32,9 +32,13 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <ProductAttribs />
-    )
+    if (!this.state.isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <ProductAttribs />
+      )
+    }
   }
 };
 

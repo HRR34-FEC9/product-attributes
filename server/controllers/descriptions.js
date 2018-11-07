@@ -18,4 +18,17 @@ module.exports = {
       .then(description => res.status(201).send(description))
       .catch(err => res.status(400).send(err));
   },
+  retrieve(req, res) {
+    return Description
+      .findByPk(req.params.descriptionId)
+      .then(description => {
+        if (!description) {
+          return res.status(404).send({
+            message: 'Description Not Found'
+          })
+        }
+        return res.status(200).send(description);
+      })
+      .catch(error => res.status(400).send(error))
+  },
 };
