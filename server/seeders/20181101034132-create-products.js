@@ -13,7 +13,7 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-    const companies = ['223569e0-ce1b-4ba4-962c-1054796d53ef', '5f9736ea-4496-466e-902c-6c169d8dfc3a', 'c4b443d0-bb42-471d-9b84-523b84093358','4d6c62d1-3fbe-4f88-a3a6-7409bd7ae2a5', '0f167806-ce3d-448f-9be0-36aa0464fbb2'];
+    const companies = ['1', '15', '28','40', '55'];
 
     const getRandomIndex =function(min, max) {
       min = Math.ceil(min);
@@ -22,12 +22,11 @@ module.exports = {
     }
 
     const createProduct = () => {
-      const productId = uuidv4();
       const productName = faker.commerce.productName();
       const createdAt = faker.date.past();
       const updatedAt = faker.date.recent();
       const companyId = companies[getRandomIndex(0,4)];
-    return product = {productId, productName, createdAt, updatedAt, companyId};
+    return product = {productName, createdAt, updatedAt, companyId};
     };
 
     const addProduct = () => {

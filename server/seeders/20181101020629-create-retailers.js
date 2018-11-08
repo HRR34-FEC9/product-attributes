@@ -4,12 +4,13 @@ const uuidv4 = require('uuid/v4');
 module.exports = {
   up: (queryInterface, Sequelize) => {
     const createRetailer = () => {
-      const companyId = uuidv4();
+      var integer = 1;
+      // const companyId = integer++
       const companyName = faker.company.companyName();
       const companyUrl = faker.internet.url();
       const createdAt = faker.date.past();
       const updatedAt = faker.date.recent();
-    return company = {companyId, companyName, companyUrl, createdAt, updatedAt};
+    return company = {companyName, companyUrl, createdAt, updatedAt};
     };
 
     const addRetailer = () => {

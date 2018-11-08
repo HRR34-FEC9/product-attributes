@@ -3,9 +3,9 @@ module.exports = {
     return queryInterface.createTable('Descriptions', {
       description_id: {
         allowNull: false,
-        defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
-        type: DataTypes.UUID
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
       },
       product_detail: {
         type: DataTypes.TEXT

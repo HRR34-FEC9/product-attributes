@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Product = sequelize.define('Product', {
     productId: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
       primaryKey: true
     },
     productName: DataTypes.STRING,
@@ -19,6 +19,9 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'productId',
     });
     Product.hasMany(models.ProductSize, {
+      foreignKey: 'productId',
+    });
+    Product.hasMany(models.Description, {
       foreignKey: 'productId',
     });
   };

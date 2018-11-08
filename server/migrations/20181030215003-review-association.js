@@ -4,8 +4,7 @@ module.exports = {
       "Reviews",
       "userId",
       {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV1,
+        type: DataTypes.INTEGER,
         references : {
           model: 'Users',
           key: 'userId',
@@ -19,8 +18,7 @@ module.exports = {
         "Reviews",
         "productId",
         {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV1,
+        type: DataTypes.INTEGER,
         references : {
           model: 'Products',
           key: 'productId',

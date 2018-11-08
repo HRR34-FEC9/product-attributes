@@ -4,11 +4,10 @@ const uuidv4 = require('uuid/v4');
 module.exports = {
   up: (queryInterface, Sequelize) => {
     const createUsers = () => {
-      const userId= uuidv4();
       const username = faker.internet.userName();
       const createdAt = faker.date.past();
       const updatedAt = faker.date.recent();
-    return user = {userId, username, createdAt, updatedAt};
+    return user = {username, createdAt, updatedAt};
     };
 
     const addUsers = () => {

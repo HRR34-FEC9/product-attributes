@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Description = sequelize.define('Description', {
     description_id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
       primaryKey: true
     },
     product_detail: DataTypes.TEXT,

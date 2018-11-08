@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const AnswerQ = sequelize.define("AnswerQ", {
     answerId: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
       primaryKey: true
     },
     answer: {

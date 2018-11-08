@@ -34,7 +34,8 @@ module.exports = (app) => {
   );
   app.post('/api/products/q', productsController.create);
   app.get('/api/products/q', productsController.list);
-  app.get('/api/products/q/:productId', productsController.retrieve)
+  app.get('/api/products/q/:productId', productsController.retrieve);
+  app.get('/api/products/product', productsController.productInfo)
 
   app.get('/api/productsizes', (req, res) =>
   res.status(200).send({message: 'Successfully Connected To ProductSizes API'})

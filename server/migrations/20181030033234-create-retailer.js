@@ -3,9 +3,9 @@ module.exports = {
     return queryInterface.createTable('Retailers', {
       companyId: {
         allowNull: false,
-        defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
-        type: DataTypes.UUID
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
       },
       companyName: {
         type: DataTypes.STRING

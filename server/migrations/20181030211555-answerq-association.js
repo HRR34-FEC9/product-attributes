@@ -6,8 +6,7 @@ module.exports = {
       "AnswerQs",
       "userId",
       {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.INTEGER,
         references: {
           model: "Users",
           key: "userId",
@@ -21,8 +20,7 @@ module.exports = {
         "AnswerQs",
         "productId",
         {
-          type: DataTypes.UUID,
-          defaultValue: DataTypes.UUIDV4,
+          type: DataTypes.INTEGER,
           references: {
             model: "Products",
             key: "productId",

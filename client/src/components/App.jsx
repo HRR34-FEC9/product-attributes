@@ -8,16 +8,20 @@ class App extends React.Component {
 
     //think through and set up state
     this.state = {
-      isLoaded: false;
+      error: null,
+      isLoaded: false,
+      product: "",
     };
     // bind functions to "this"
     this.getData = this.getData.bind(this);
   }
 
   getData() {
-    $.get('/api', (data) => {
-      // console.log('19',data)
-      this.setState()
+    $.get('/api/products/product', (data) => {
+      this.setState({
+        isLoaded: true,
+        product: data,
+      })
     })
     .done(() => {
       console.log('successfully connected to server')
@@ -32,11 +36,14 @@ class App extends React.Component {
   }
 
   render() {
-    if (!this.state.isLoaded) {
+    const { error, isLoaded } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>
+    } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
-        <ProductAttribs />
+        <ProductAttribs product={this.state.product}/>
       )
     }
   }

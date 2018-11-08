@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Retailer = sequelize.define('Retailer', {
     companyId: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
       primaryKey: true
     },
     companyName: DataTypes.STRING,
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Retailer.associate = (models) => {
     Retailer.hasMany(models.Product, {
-      foreignKey: 'productId',
+      foreignKey: 'companyId',
     });
   };
 

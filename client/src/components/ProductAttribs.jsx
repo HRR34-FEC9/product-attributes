@@ -6,12 +6,12 @@ const ProductAttribs = (props) => (
     <div className="titleSection">
       <h1>
         <span className="titleText">
-          Samsung 50NU7100 Flat 50” 4K UHD 7 Series Smart TV 2018
+          {props.product[0].productName}
         </span>
       </h1>
     </div>
     <div className="companyName">
-      <span>by Samasung</span>
+      <span>by&nbsp;{props.product[0].Retailer.companyName}</span>
     </div>
     <div className="customerReviews">
       <span className="reviews">
@@ -39,7 +39,7 @@ const ProductAttribs = (props) => (
               Price:
             </td>
             <td className="retailPrice">
-              $897.99
+              ${props.product[0].ProductSizes[3].Prices[0].retailPrice}
             </td>
           </tr>
           <tr>
@@ -47,7 +47,7 @@ const ProductAttribs = (props) => (
               Sale:
             </td>
             <td>
-              <span className="salePrice">$847.99&nbsp;</span><span>& <b>FREE Shipping</b></span>
+              <span className="salePrice">${props.product[0].ProductSizes[3].Prices[0].listPrice}&nbsp;</span><span>& <b>FREE Shipping</b></span>
             </td>
           </tr>
           <tr>
@@ -55,7 +55,7 @@ const ProductAttribs = (props) => (
               You Save:
             </td>
             <td>
-              <span className="savings">$50.00&nbsp;(6%)</span>
+              <span className="savings">${props.product[0].ProductSizes[3].Prices[0].savings}&nbsp;(6%)</span>
             </td>
           </tr>
           <tr>
@@ -71,6 +71,7 @@ const ProductAttribs = (props) => (
     </div>
     <div className="sizeButtons">
       <div>
+      {console.log("info", props.product[0].ProductSizes[3])}
         <span>Size:&nbsp;</span><span><b>65-Inch</b></span>&nbsp;<span><a>Size Chart</a></span>
       </div>
       <ul className="ulist">
@@ -118,7 +119,7 @@ const ProductAttribs = (props) => (
     <div className="featureBullets">
       <ul className="featureUl">
         <li>
-          <span className="featureLi">PurColor: Enjoy millions of shades of color, fine tuned to create an incredibly vibrant picture</span>
+          <span className="featureLi">{props.product[0].Descriptions[0].product_detail.substring(0, 50)}</span>
         </li>
       </ul>
       <span className="productDetailsBullet">›&nbsp;</span>
@@ -140,3 +141,9 @@ const ProductAttribs = (props) => (
 )
 
 export default ProductAttribs;
+
+ // {props.product[0].Descriptions.map((description) =>
+ //        <li key={description.description_id}>
+ //          <span className="featureLi">{description.product_detail.substring(0, 50)}</span>
+ //        </li>
+ //        )}

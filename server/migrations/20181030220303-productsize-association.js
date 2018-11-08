@@ -4,8 +4,7 @@ module.exports = {
       "ProductSizes",
       "productId",
       {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV1,
+        type: DataTypes.INTEGER,
         references: {
           model: 'Products',
           key: 'productId',
