@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 #centerCol {
   display: flex;
   flex-flow: column wrap;
@@ -252,6 +254,9 @@
 .featureLi {
   color: #111;
   margin: 0 0 5px 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: light;
 /*  word-wrap: break-word;*/
 }
 

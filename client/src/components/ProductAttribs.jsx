@@ -123,7 +123,7 @@ const ProductAttribs = (props) => (
       <ul className="featureUl">
         {props.product[0].Descriptions.slice(0,5).map((desc) =>
           <li key={desc.description_id} className="featureLi">
-            <span>{desc.product_detail.substring(0, 80)}</span>
+            <span>{desc.product_detail.substring(0, 100)}</span>
           </li>
         )}
       </ul>
