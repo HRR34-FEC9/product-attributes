@@ -29,13 +29,13 @@ module.exports = (app) => {
   app.get('/api/prices/q', pricesController.list);
   app.get('/api/prices/q/:priceId', pricesController.retrieve);
 
-  app.get('/api/products', (req, res) =>
+  app.get('/api/productdata', (req, res) =>
   res.status(200).send({message: 'Successfully Connected To Products API'})
   );
-  app.post('/api/products/q', productsController.create);
-  app.get('/api/products/q', productsController.list);
-  app.get('/api/products/q/:productId', productsController.retrieve);
-  app.get('/api/products/product', productsController.productInfo)
+  app.post('/api/productdata/q', productsController.create);
+  app.get('/api/productdata/q', productsController.list);
+  app.get('/api/productdata/q/:productId', productsController.retrieve);
+  app.get('/api/productdata/product', productsController.productInfo)
 
   app.get('/api/productsizes', (req, res) =>
   res.status(200).send({message: 'Successfully Connected To ProductSizes API'})

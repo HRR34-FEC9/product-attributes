@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   getData() {
-    $.get('/api/products/product', (data) => {
+    $.get('/api/productdata/product', (data) => {
       this.setState({
         isLoaded: true,
         product: data,
