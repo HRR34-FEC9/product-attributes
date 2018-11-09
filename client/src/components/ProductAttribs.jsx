@@ -55,7 +55,7 @@ const ProductAttribs = (props) => (
               You Save:
             </td>
             <td>
-              <span className="savings">${props.product[0].ProductSizes[0].Prices[0].savings}&nbsp;(6%)</span>
+              <span className="savings">${props.product[0].ProductSizes[0].Prices[0].savings}&nbsp;({((props.product[0].ProductSizes[0].Prices[0].listPrice/props.product[0].ProductSizes[0].Prices[0].retailPrice)*100).toFixed()}%)</span>
             </td>
           </tr>
           <tr>
