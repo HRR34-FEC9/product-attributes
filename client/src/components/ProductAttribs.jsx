@@ -39,7 +39,7 @@ const ProductAttribs = (props) => (
               Price:
             </td>
             <td className="retailPrice">
-              ${props.product[0].ProductSizes[3].Prices[0].retailPrice}
+              ${props.product[0].ProductSizes[0].Prices[0].retailPrice}
             </td>
           </tr>
           <tr>
@@ -47,7 +47,7 @@ const ProductAttribs = (props) => (
               Sale:
             </td>
             <td>
-              <span className="salePrice">${props.product[0].ProductSizes[3].Prices[0].listPrice}&nbsp;</span><span>& <b>FREE Shipping</b></span>
+              <span className="salePrice">${props.product[0].ProductSizes[0].Prices[0].listPrice}&nbsp;</span><span>& <b>FREE Shipping</b></span>
             </td>
           </tr>
           <tr>
@@ -55,7 +55,7 @@ const ProductAttribs = (props) => (
               You Save:
             </td>
             <td>
-              <span className="savings">${props.product[0].ProductSizes[3].Prices[0].savings}&nbsp;(6%)</span>
+              <span className="savings">${props.product[0].ProductSizes[0].Prices[0].savings}&nbsp;(6%)</span>
             </td>
           </tr>
           <tr>
@@ -71,20 +71,23 @@ const ProductAttribs = (props) => (
     </div>
     <div className="sizeButtons">
       <div>
-      {console.log("info", props.product[0].ProductSizes[3])}
-        <span>Size:&nbsp;</span><span><b>65-Inch</b></span>&nbsp;<span><a>Size Chart</a></span>
+
+        <span>Size:&nbsp;</span><span><b>{props.product[0].ProductSizes[0].sizeDescription}</b></span>&nbsp;<span><a>Size Chart</a></span>
       </div>
       <ul className="ulist">
-        <li className="list">
-          <div className="sizeBox">
-            <div className="buttonTop">
-              40-Inch
+       {console.log("info", props.product[0])}
+       {props.product[0].ProductSizes.slice(0, 5).map((size) =>
+          <li className="list" key={size.sizeId}>
+            <div className="sizeBox">
+              <div className="buttonTop">
+                {size.sizeDescription}
+              </div>
+              <div className="buttonBottom">
+                  {size.Prices[0].retailPrice}
+              </div>
             </div>
-            <div className="buttonBottom">
-              $377.99
-            </div>
-          </div>
-        </li>
+          </li>
+        )}
       </ul>
     </div>
     <div>
@@ -118,9 +121,11 @@ const ProductAttribs = (props) => (
     <span className="hr"/>
     <div className="featureBullets">
       <ul className="featureUl">
-        <li>
-          <span className="featureLi">{props.product[0].Descriptions[0].product_detail.substring(0, 50)}</span>
-        </li>
+        {props.product[0].Descriptions.slice(0,5).map((desc) =>
+          <li key={desc.description_id} className="featureLi">
+            <span>{desc.product_detail.substring(0, 80)}</span>
+          </li>
+        )}
       </ul>
       <span className="productDetailsBullet">›&nbsp;</span>
       <a>See more product details</a>

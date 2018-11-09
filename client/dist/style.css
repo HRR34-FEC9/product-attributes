@@ -81,9 +81,10 @@
 .sizeBox {
   border: 1px solid #e7e7e7;
   border-radius: 2px;
+  text-align: center;
   height: 48px;
   width: 77px;
-  margin: 0px;
+  margin: 5px;
   padding: 0px;
 }
 
@@ -116,6 +117,7 @@
 
 .buttonBottom:hover {
   color: #e77600;
+  font-weight: bold;
 }
 
 .label {
@@ -249,6 +251,7 @@
 
 .featureLi {
   color: #111;
+  margin: 0 0 5px 0;
 /*  word-wrap: break-word;*/
 }
 

@@ -11,6 +11,10 @@ module.exports = {
     }
 
     const productSizes = ['2', '12', '22', '32', '42']
+    var i = 0;
+    function increment() {
+      return ++i;
+    }
 
     const createPrices = () => {
       const listPrice = faker.finance.amount(.99, 100.00, 2);
@@ -18,7 +22,7 @@ module.exports = {
       const savings = (retailPrice - listPrice).toFixed(2);
       const createdAt = faker.date.past();
       const updatedAt = faker.date.recent();
-      const sizeId = productSizes[getRandomIndex(0,4)];
+      const sizeId = increment();
     return price = {listPrice, retailPrice, savings, createdAt, updatedAt, sizeId};
     };
 
