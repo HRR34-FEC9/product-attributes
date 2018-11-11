@@ -1,4 +1,8 @@
 {
+  "production": {
+    "use_env_variable": "PATTRIBS_URL",
+    "dialect": "postgres"
+  },
   "development": {
     "username": "fec9",
     "password": "fec9",
