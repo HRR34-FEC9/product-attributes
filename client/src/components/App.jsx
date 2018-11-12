@@ -11,16 +11,18 @@ class App extends React.Component {
       error: null,
       isLoaded: false,
       product: "",
+      productId: "",
     };
     // bind functions to "this"
     this.getData = this.getData.bind(this);
   }
 
-  getData() {
-    $.get('/api/productdata/product', (data) => {
+  getData(id) {
+    $.get(`/api/productdata/q/${id}`, (data) => {
       this.setState({
         isLoaded: true,
         product: data,
+        productId: data.productId,
       })
     })
     .done(() => {
@@ -32,7 +34,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getData();
+    var prodId = Number(window.location.pathname.replace(/\//, ''));
+    if (![19, 33, 41, 73, 88].includes(prodId)) {
+      this.getData(19);
+    } else {
+      this.getData(prodId);
+    }
   }
 
   render() {

@@ -25,7 +25,40 @@ module.exports = {
   },
   retrieve(req, res) {
     return Product
-      .findByPk(req.params.productId)
+      .findByPk(req.params.productId, {
+        include: [
+          {
+            model: Retailer,
+          },
+          {
+            model: ProductSize,
+            include: [
+              {
+                model: Price,
+              }
+            ]
+          },
+          {
+            model: Description,
+          },
+          {
+            model: Review,
+            include: [
+              {
+                model: User,
+              }
+            ]
+          },
+          // {
+          //   model: AnswerQ,
+          //   include: [
+          //     {
+          //       model: User,
+          //     }
+          //   ]
+          // },
+        ]
+      })
       .then(product => {
         if (!product) {
           return res.status(404).send({

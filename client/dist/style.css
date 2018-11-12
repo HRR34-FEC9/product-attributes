@@ -238,7 +238,7 @@
 }
 
 .featureBullets {
-  margin: 10px 0 18px 0;
+  margin: 10px 0 15px 0;
 
 }
 
@@ -261,7 +261,7 @@
 }
 
 .compare {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .usedOrNew {
@@ -303,5 +303,5 @@ h1 {
   border-top: 1px solid #e7e7e7;
   line-height: 19px;
   margin-top: 8px;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }

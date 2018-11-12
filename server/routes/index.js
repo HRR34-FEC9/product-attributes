@@ -1,3 +1,4 @@
+const path = require('path');
 const answerqsController = require('../controllers').answerqs;
 const descriptionsController = require('../controllers').descriptions;
 const pricesController = require('../controllers').prices;
@@ -35,7 +36,10 @@ module.exports = (app) => {
   app.post('/api/productdata/q', productsController.create);
   app.get('/api/productdata/q', productsController.list);
   app.get('/api/productdata/q/:productId', productsController.retrieve);
-  app.get('/api/productdata/product', productsController.productInfo)
+  app.get('/api/productdata/product', productsController.productInfo);
+  app.get('/:productId', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/dist/index.html'))
+  })
 
   app.get('/api/productsizes', (req, res) =>
   res.status(200).send({message: 'Successfully Connected To ProductSizes API'})
